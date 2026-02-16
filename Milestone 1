@@ -1,0 +1,89 @@
+import streamlit as st
+
+st.set_page_config(page_title="Fitness Profile", page_icon="🏋️", layout="centered")
+
+st.title("🏋️ Personalized Fitness Profile")
+
+st.markdown("---")
+
+# =========================
+# 1️⃣ Personal Information
+# =========================
+st.header("1. Personal Information")
+
+name = st.text_input("Name *")
+
+height_cm = st.number_input("Height (in centimeters) *", min_value=0.0, format="%.2f")
+weight_kg = st.number_input("Weight (in kilograms) *", min_value=0.0, format="%.2f")
+
+# =========================
+# 2️⃣ Fitness Details
+# =========================
+st.header("2. Fitness Details")
+
+fitness_goal = st.selectbox(
+    "Fitness Goal",
+    ["Build Muscle", "Weight Loss", "Strength Gain", "Abs Building", "Flexible"]
+)
+
+equipment = st.multiselect(
+    "Available Equipment (Multiple selection allowed)",
+    ["Dumbbells", "Resistance Band", "Yoga Mat", "No Equipment"]
+)
+
+fitness_level = st.radio(
+    "Fitness Level",
+    ["Beginner", "Intermediate", "Advanced"],
+    horizontal=True
+)
+
+st.markdown("---")
+
+# =========================
+# 3️⃣ Submit Button
+# =========================
+if st.button("Generate Profile"):
+
+    # =========================
+    # Validation
+    # =========================
+    if name.strip() == "":
+        st.error("❌ Name is required.")
+    elif height_cm <= 0:
+        st.error("❌ Height must be greater than zero.")
+    elif weight_kg <= 0:
+        st.error("❌ Weight must be greater than zero.")
+    else:
+        # =========================
+        # BMI Calculation
+        # =========================
+        height_m = height_cm / 100  # Convert cm to meters
+        bmi = weight_kg / (height_m ** 2)
+        bmi = round(bmi, 2)
+
+        # =========================
+        # BMI Category
+        # =========================
+        if bmi < 18.5:
+            category = "Underweight"
+        elif 18.5 <= bmi < 24.9:
+            category = "Normal"
+        elif 25 <= bmi < 29.9:
+            category = "Overweight"
+        else:
+            category = "Obese"
+
+        # =========================
+        # Display Results
+        # =========================
+        st.success("✅ Profile Generated Successfully!")
+
+        st.subheader(f"👤 {name}'s Fitness Summary")
+
+        st.write(f"**Height (m):** {round(height_m, 2)} m")
+        st.write(f"**Weight (kg):** {weight_kg} kg")
+        st.write(f"**BMI:** {bmi}")
+        st.write(f"**BMI Category:** {category}")
+        st.write(f"**Fitness Goal:** {fitness_goal}")
+        st.write(f"**Fitness Level:** {fitness_level}")
+        st.write(f"**Available Equipment:** {', '.join(equipment) if equipment else 'None Selected'}")
