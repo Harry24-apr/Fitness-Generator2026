@@ -99,6 +99,6 @@ BMI = \frac{Weight\ (kg)}{(Height\ (meters))^2}
 
 ## 👤 Author
 
-Harsha Vardhan Badanapuri  
+REDDYPOGU HARRY JOEN 
 B.E. Electrical and Electronics Engineering  
 
