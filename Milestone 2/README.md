@@ -148,7 +148,7 @@ Day 2: Lower Body
 
 🔗 Live Application Link:
 
-https://huggingface.co/spaces/YOUR-USERNAME/YOUR-SPACE-NAME
+https://huggingface.co/spaces/Harry2406/Fitness
 
 (Replace with your actual deployment link)
 
