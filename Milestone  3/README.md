@@ -119,7 +119,7 @@ python app.py
 
 5. Open in browser
 
-http://localhost:5000
+https://huggingface.co/spaces/Infosysprojectwork/AI_Fitness_Analyzer
 
 ---
 
