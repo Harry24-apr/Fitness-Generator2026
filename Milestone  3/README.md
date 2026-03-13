@@ -6,7 +6,7 @@ AI Fitness Analyzer is a web-based application that provides users with a person
 
 To ensure secure access, the application implements a login system with OTP (One-Time Password) verification. This two-step authentication process allows only verified users to access the fitness dashboard and generate their personalized fitness plans.
 
-This project is developed as part of the Infosys Internship Program and is deployed on Hugging Face Spaces. 
+This project is developed as part of the Infosys Internship Program and is deployed on Hugging Face Spaces.
 
 ---
 
